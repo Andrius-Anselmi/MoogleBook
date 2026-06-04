@@ -1,35 +1,33 @@
 package com.mooglebook.infrastructure.persistence.entities;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.time.LocalDateTime;
 
-
 @Entity
-@Table(name = "game_session")
+@Table(name = "review")
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class GameSession {
+@Getter
+@Setter
+public class ReviewEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(nullable = false)
-    private LocalDateTime sessionDate;
+    private int rating;
 
     @Column(nullable = false)
-    private Double duration;
+    private String review;
 
-    private String annotation;
+    @Column(nullable = false)
+    LocalDateTime dateReview;
 
-    @ManyToOne
+    @OneToOne
     @JoinColumn(name = "game_id", nullable = false)
-    private Game game;
-
-
+    private GameEntity game;
 }

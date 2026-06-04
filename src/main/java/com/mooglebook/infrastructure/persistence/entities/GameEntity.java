@@ -3,9 +3,7 @@ package com.mooglebook.infrastructure.persistence.entities;
 import com.mooglebook.domain.enums.Genre;
 import com.mooglebook.domain.enums.Status;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.util.List;
 
@@ -14,7 +12,9 @@ import java.util.List;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class Game {
+@Getter
+@Setter
+public class GameEntity {
 
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -33,9 +33,9 @@ public class Game {
         String studio;
 
         @OneToMany(mappedBy = "game")
-        private List<GameSession> gameSession;
+        private List<GameSessionEntity> gameSession;
 
         @OneToOne(mappedBy = "game")
-        private Review review;
+        private ReviewEntity review;
 
 }
