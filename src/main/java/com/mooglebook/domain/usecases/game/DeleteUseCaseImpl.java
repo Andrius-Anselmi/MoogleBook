@@ -1,5 +1,6 @@
 package com.mooglebook.domain.usecases.game;
 
+import com.mooglebook.domain.exception.NotFoundGameException;
 import com.mooglebook.domain.gateways.game.GameGateway;
 
 public class DeleteUseCaseImpl implements DeleteUseCase {
@@ -12,6 +13,7 @@ public class DeleteUseCaseImpl implements DeleteUseCase {
 
     @Override
     public void execute(Long id){
+        gateway.findById(id).orElseThrow(() -> new NotFoundGameException("Game not found with id: " + id));
         gateway.delete(id);
     }
 

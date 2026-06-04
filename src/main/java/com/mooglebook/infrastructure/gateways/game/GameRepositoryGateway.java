@@ -3,9 +3,9 @@ package com.mooglebook.infrastructure.gateways.game;
 import com.mooglebook.domain.entities.Game;
 import com.mooglebook.domain.enums.Genre;
 import com.mooglebook.domain.enums.Status;
+import com.mooglebook.domain.exception.DuplicateGameException;
 import com.mooglebook.domain.gateways.game.GameGateway;
 import com.mooglebook.infrastructure.mapper.GameMapper;
-import com.mooglebook.infrastructure.persistence.entities.GameEntity;
 import com.mooglebook.infrastructure.persistence.repository.GameRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
@@ -20,7 +20,7 @@ public class GameRepositoryGateway implements GameGateway {
     private final GameRepository repository;
 
     @Override
-    public Game create(Game game){
+    public Game create(Game game) throws DuplicateGameException {
         return GameMapper.toGame(repository.save(GameMapper.toEntity(game)));
     }
 
@@ -31,8 +31,7 @@ public class GameRepositoryGateway implements GameGateway {
 
     @Override
     public void delete(Long id) {
-        Optional<GameEntity> byId = repository.findById(id);
-        repository.delete(byId.get());
+        repository.deleteById(id);
     }
 
     @Override
@@ -46,14 +45,18 @@ public class GameRepositoryGateway implements GameGateway {
     }
 
     @Override
-    public Game findById(Long id) {
-        Optional<GameEntity> byId = repository.findById(id);
-        return byId.map(GameMapper::toGame).orElse(null);
+    public Optional<Game> findById(Long id) {
+        return repository.findById(id).map(GameMapper::toGame);
     }
 
     @Override
     public Game update(Long id, Game game) {
         return null;
+    }
+
+    @Override
+    public Optional<Game> findGameByName(String name) {
+        return repository.findGameByName(name).map(GameMapper::toGame);
     }
 
 }

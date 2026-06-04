@@ -1,6 +1,5 @@
 package com.mooglebook.infrastructure.presentation;
 
-import com.mooglebook.domain.entities.Game;
 import com.mooglebook.domain.usecases.game.CreateUseCase;
 import com.mooglebook.domain.usecases.game.DeleteUseCase;
 import com.mooglebook.domain.usecases.game.FindAllUseCase;

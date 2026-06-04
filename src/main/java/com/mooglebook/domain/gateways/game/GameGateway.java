@@ -5,6 +5,7 @@ import com.mooglebook.domain.enums.Genre;
 import com.mooglebook.domain.enums.Status;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface GameGateway {
 
@@ -13,7 +14,8 @@ public interface GameGateway {
     void delete(Long id);
     List<Game> filterByGenre(Genre genre);
     List<Game> filterByStatus(Status status);
-    Game findById(Long id);
+    Optional<Game> findById(Long id);
     Game update(Long id, Game game);
+    Optional<Game> findGameByName(String name);
 
 }

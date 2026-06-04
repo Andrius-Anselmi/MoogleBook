@@ -27,4 +27,9 @@ public class BeanConfiguration {
     public DeleteUseCase deleteUseCase(GameGateway gateway){
         return new DeleteUseCaseImpl(gateway);
     }
+
+    @Bean
+    public FindByNameUseCase findByNameUseCase(GameGateway gateway){
+        return new FindByNameUseCaseImpl(gateway);
+    }
 }
