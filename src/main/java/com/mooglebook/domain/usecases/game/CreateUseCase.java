@@ -4,5 +4,5 @@ import com.mooglebook.domain.entities.Game;
 
 public interface CreateUseCase {
 
-    Game execute();
+    Game execute(Game game);
 }
