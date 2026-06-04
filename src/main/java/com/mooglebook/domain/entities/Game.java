@@ -14,4 +14,8 @@ public record Game(
         List<GameSession> gameSession,
         Review review
 ) {
+
+    public static Game create(String name, Genre genre, Status status, String studio){
+        return new Game(null, name,genre,status,studio,null,null);
+    }
 }
