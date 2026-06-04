@@ -1,0 +1,7 @@
+CREATE TABLE game (
+    id BIGSERIAL PRIMARY KEY,
+    name VARCHAR (255) NOT NULL,
+    status VARCHAR (255) NOT NULL,
+    genre VARCHAR (255) NOT NULL,
+    studio VARCHAR (255)
+);
