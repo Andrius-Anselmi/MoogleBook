@@ -5,7 +5,7 @@ import com.mooglebook.domain.enums.Genre;
 
 import java.util.List;
 
-public interface FilterByGenreUseCase {
+public interface FilterGameByGenreUseCase {
 
     List<Game> execute(Genre genre);
 }

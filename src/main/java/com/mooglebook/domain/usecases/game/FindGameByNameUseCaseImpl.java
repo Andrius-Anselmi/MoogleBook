@@ -4,11 +4,11 @@ import com.mooglebook.domain.entities.Game;
 import com.mooglebook.domain.exception.NotFoundGameException;
 import com.mooglebook.domain.gateways.game.GameGateway;
 
-public class FindByNameUseCaseImpl implements FindByNameUseCase {
+public class FindGameByNameUseCaseImpl implements FindGameByNameUseCase {
 
     private final GameGateway gateway;
 
-    public FindByNameUseCaseImpl(GameGateway gateway){
+    public FindGameByNameUseCaseImpl(GameGateway gateway){
         this.gateway = gateway;
     }
     @Override

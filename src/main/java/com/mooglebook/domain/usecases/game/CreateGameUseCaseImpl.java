@@ -4,11 +4,11 @@ import com.mooglebook.domain.entities.Game;
 import com.mooglebook.domain.exception.DuplicateGameException;
 import com.mooglebook.domain.gateways.game.GameGateway;
 
-public class CreateUseCaseImpl implements CreateUseCase {
+public class CreateGameUseCaseImpl implements CreateGameUseCase {
 
     private final GameGateway gateway;
 
-    public CreateUseCaseImpl(GameGateway gateway) {
+    public CreateGameUseCaseImpl(GameGateway gateway) {
         this.gateway = gateway;
     }
 

@@ -2,7 +2,7 @@ package com.mooglebook.domain.usecases.game;
 
 import com.mooglebook.domain.entities.Game;
 
-public interface FindByNameUseCase {
+public interface FindGameByIdUseCase {
 
-    Game execute(String name);
+    Game execute(Long id);
 }

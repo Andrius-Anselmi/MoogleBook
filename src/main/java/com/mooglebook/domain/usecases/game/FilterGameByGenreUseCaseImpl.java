@@ -6,11 +6,11 @@ import com.mooglebook.domain.gateways.game.GameGateway;
 
 import java.util.List;
 
-public class FilterByGenreUseCaseImpl implements FilterByGenreUseCase {
+public class FilterGameByGenreUseCaseImpl implements FilterGameByGenreUseCase {
 
     private final GameGateway gateway;
 
-    public FilterByGenreUseCaseImpl(GameGateway gateway) {
+    public FilterGameByGenreUseCaseImpl(GameGateway gateway) {
         this.gateway = gateway;
     }
 

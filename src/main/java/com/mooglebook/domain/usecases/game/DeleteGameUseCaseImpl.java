@@ -3,11 +3,11 @@ package com.mooglebook.domain.usecases.game;
 import com.mooglebook.domain.exception.NotFoundGameException;
 import com.mooglebook.domain.gateways.game.GameGateway;
 
-public class DeleteUseCaseImpl implements DeleteUseCase {
+public class DeleteGameUseCaseImpl implements DeleteGameUseCase {
 
     private final GameGateway gateway;
 
-    public DeleteUseCaseImpl(GameGateway gateway) {
+    public DeleteGameUseCaseImpl(GameGateway gateway) {
         this.gateway = gateway;
     }
 

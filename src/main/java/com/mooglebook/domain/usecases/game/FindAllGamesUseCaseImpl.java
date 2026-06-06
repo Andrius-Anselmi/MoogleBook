@@ -5,11 +5,11 @@ import com.mooglebook.domain.gateways.game.GameGateway;
 
 import java.util.List;
 
-public class FindAllUseCaseImpl implements FindAllUseCase {
+public class FindAllGamesUseCaseImpl implements FindAllGamesUseCase {
 
     private final GameGateway gateway;
 
-    public FindAllUseCaseImpl(GameGateway gateway){
+    public FindAllGamesUseCaseImpl(GameGateway gateway){
         this.gateway = gateway;
     }
 

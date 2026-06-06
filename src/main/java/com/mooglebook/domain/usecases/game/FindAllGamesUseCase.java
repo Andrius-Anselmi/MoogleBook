@@ -2,7 +2,9 @@ package com.mooglebook.domain.usecases.game;
 
 import com.mooglebook.domain.entities.Game;
 
-public interface FindByIdUseCase {
+import java.util.List;
 
-    Game execute(Long id);
+public interface FindAllGamesUseCase {
+
+    List<Game> execute();
 }

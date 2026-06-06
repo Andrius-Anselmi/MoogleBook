@@ -2,9 +2,7 @@ package com.mooglebook.domain.usecases.game;
 
 import com.mooglebook.domain.entities.Game;
 
-import java.util.List;
+public interface CreateGameUseCase {
 
-public interface FindAllUseCase {
-
-    List<Game> execute();
+    Game execute(Game game);
 }

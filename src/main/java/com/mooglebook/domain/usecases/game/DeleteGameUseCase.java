@@ -1,6 +1,6 @@
 package com.mooglebook.domain.usecases.game;
 
-public interface DeleteUseCase {
+public interface DeleteGameUseCase {
 
     void execute(Long id);
 }

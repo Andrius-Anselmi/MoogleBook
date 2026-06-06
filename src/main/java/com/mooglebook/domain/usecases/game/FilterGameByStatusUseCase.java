@@ -5,7 +5,7 @@ import com.mooglebook.domain.enums.Status;
 
 import java.util.List;
 
-public interface FilterByStatusUseCase {
+public interface FilterGameByStatusUseCase {
 
     List<Game> execute(Status status);
 }

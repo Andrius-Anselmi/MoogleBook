@@ -2,7 +2,9 @@ package com.mooglebook.domain.usecases.gamesession;
 
 import com.mooglebook.domain.entities.GameSession;
 
-public interface FindByIdUseCase {
+import java.util.List;
 
-    GameSession execute(Long id);
+public interface FindAllGameSessionsUseCase {
+
+    List<GameSession> execute();
 }
