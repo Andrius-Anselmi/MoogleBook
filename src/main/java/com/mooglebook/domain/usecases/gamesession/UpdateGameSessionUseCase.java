@@ -2,7 +2,7 @@ package com.mooglebook.domain.usecases.gamesession;
 
 import com.mooglebook.domain.entities.GameSession;
 
-public interface CreateUseCase {
+public interface UpdateGameSessionUseCase {
 
-    GameSession execute();
+    GameSession execute(Long id, GameSession gameSession);
 }
