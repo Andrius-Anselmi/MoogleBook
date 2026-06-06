@@ -18,4 +18,12 @@ public record Game(
     public static Game create(String name, Genre genre, Status status, String studio){
         return new Game(null, name,genre,status,studio,null,null);
     }
+
+    public static Game create(Long id){
+        return new Game(id,null, null, null, null, null, null);
+    }
+
+    public static Game create(Long id, String name, Genre genre, Status status, String studio){
+        return new Game(id,name,genre,status,studio, null, null);
+    }
 }

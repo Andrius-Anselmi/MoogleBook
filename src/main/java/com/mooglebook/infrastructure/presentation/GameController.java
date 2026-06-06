@@ -17,13 +17,13 @@ import java.util.List;
 @RequiredArgsConstructor
 public class GameController {
 
-    private final CreateUseCase createUseCase;
-    private final FindAllUseCase findAllUseCase;
-    private final FindByIdUseCase findByIdUseCase;
-    private final DeleteUseCase deleteUseCase;
-    private final FilterByGenreUseCase filterByGenreUseCase;
-    private final FilterByStatusUseCase filterByStatusUseCase;
-    private final FindByNameUseCase findByNameUseCase;
+    private final CreateGameUseCase createUseCase;
+    private final FindAllGamesUseCase findAllUseCase;
+    private final FindGameByIdUseCase findByIdUseCase;
+    private final DeleteGameUseCase deleteUseCase;
+    private final FilterGameByGenreUseCase filterByGenreUseCase;
+    private final FilterGameByStatusUseCase filterByStatusUseCase;
+    private final FindGameByNameUseCase findByNameUseCase;
 
     @PostMapping()
     public ResponseEntity<GameResponse> create(@RequestBody GameRequest request){

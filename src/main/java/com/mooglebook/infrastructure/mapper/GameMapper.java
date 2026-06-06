@@ -11,6 +11,7 @@ public class GameMapper {
 
     public static GameEntity toEntity(Game game){
         return GameEntity.builder()
+                .id(game.id())
                 .name(game.name())
                 .genre(game.genre())
                 .status(game.status())
@@ -19,14 +20,12 @@ public class GameMapper {
     }
 
     public static Game toGame(GameEntity gameEntity){
-        return new Game(
+        return Game.create(
                 gameEntity.getId(),
                 gameEntity.getName(),
                 gameEntity.getGenre(),
                 gameEntity.getStatus(),
-                gameEntity.getStudio(),
-                null,
-                null
+                gameEntity.getStudio()
         );
     }
 
