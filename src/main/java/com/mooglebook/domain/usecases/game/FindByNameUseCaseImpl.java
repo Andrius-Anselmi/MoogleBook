@@ -12,7 +12,7 @@ public class FindByNameUseCaseImpl implements FindByNameUseCase {
         this.gateway = gateway;
     }
     @Override
-    public Game findByName(String name) {
+    public Game execute(String name) {
         return gateway.findGameByName(name)
                 .orElseThrow(() -> new NotFoundGameException("Game not found with name:  "+ name));
     }

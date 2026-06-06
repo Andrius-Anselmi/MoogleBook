@@ -32,4 +32,14 @@ public class BeanConfiguration {
     public FindByNameUseCase findByNameUseCase(GameGateway gateway){
         return new FindByNameUseCaseImpl(gateway);
     }
+
+    @Bean
+    public FilterByGenreUseCase filterByGenreUseCase(GameGateway gateway){
+        return new FilterByGenreUseCaseImpl(gateway);
+    }
+
+    @Bean
+    public FilterByStatusUseCase filterByStatusUseCase(GameGateway gateway){
+        return new FilterByStatusUseCaseImpl(gateway);
+    }
 }

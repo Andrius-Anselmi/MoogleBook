@@ -36,12 +36,14 @@ public class GameRepositoryGateway implements GameGateway {
 
     @Override
     public List<Game> filterByGenre(Genre genre) {
-        return List.of();
+        return repository.findGameByGenre(genre).stream()
+                .map(GameMapper::toGame).toList();
     }
 
     @Override
     public List<Game> filterByStatus(Status status) {
-        return List.of();
+        return repository.findGameByStatus(status).stream()
+                .map(GameMapper::toGame).toList();
     }
 
     @Override

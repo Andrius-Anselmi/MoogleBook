@@ -4,5 +4,5 @@ import com.mooglebook.domain.entities.Game;
 
 public interface FindByNameUseCase {
 
-    Game findByName(String name);
+    Game execute(String name);
 }
