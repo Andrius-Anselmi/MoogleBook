@@ -21,7 +21,7 @@ public class CreateGameSessionUseCaseImpl implements CreateGameSessionUseCase {
     @Override
     public GameSession execute(CreateGameSessionInput gameSession) {
         Game game = gameGateway.findById(gameSession.game()).orElseThrow(
-                () -> new NotFoundGameException("Game not found")
+                () -> new NotFoundGameException("Game not found with id " + gameSession.game())
         );
 
         GameSession newGameSession = new GameSession(null, gameSession.sessionDate(), gameSession.duration(), gameSession.annotation(), game);

@@ -1,9 +1,8 @@
 package com.mooglebook.domain.usecases.gamesession;
 
 import com.mooglebook.domain.entities.GameSession;
+import com.mooglebook.domain.exception.NotFoundGameSessionException;
 import com.mooglebook.domain.gateways.game.GameSessionGateway;
-
-import java.util.Optional;
 
 public class FindGameSessionByIdUseCaseImpl implements FindGameSessionByIdUseCase {
 
@@ -14,11 +13,6 @@ public class FindGameSessionByIdUseCaseImpl implements FindGameSessionByIdUseCas
     }
     @Override
     public GameSession execute(Long id) {
-        Optional<GameSession> gameSessionId = gateway.findById(id);
-        if(gameSessionId.isPresent()){
-            return gameSessionId.get();
-        }
-
-        return null;
+        return gateway.findById(id).orElseThrow(() -> new NotFoundGameSessionException("Game session not found with id: " + id));
     }
 }

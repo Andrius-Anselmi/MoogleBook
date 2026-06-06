@@ -1,7 +1,9 @@
 package com.mooglebook.infrastructure.config;
 
 import com.mooglebook.domain.gateways.game.GameGateway;
+import com.mooglebook.domain.gateways.game.GameSessionGateway;
 import com.mooglebook.domain.usecases.game.*;
+import com.mooglebook.domain.usecases.gamesession.*;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -9,37 +11,63 @@ import org.springframework.context.annotation.Configuration;
 public class BeanConfiguration {
 
     @Bean
-    public CreateUseCase createUseCase(GameGateway gateway){
-        return new CreateUseCaseImpl(gateway);
+    public CreateGameUseCase createUseCase(GameGateway gameGateway){
+        return new CreateGameUseCaseImpl(gameGateway);
     }
 
     @Bean
-    public FindAllUseCase findAllUseCase(GameGateway gateway){
-        return new FindAllUseCaseImpl(gateway);
+    public FindAllGamesUseCase findAllUseCase(GameGateway gameGateway){
+        return new FindAllGamesUseCaseImpl(gameGateway);
     }
 
     @Bean
-    public FindByIdUseCase findByIdUseCase(GameGateway gateway){
-        return new FindByIdUseCaseImpl(gateway);
+    public FindGameByIdUseCase findByIdUseCase(GameGateway gameGateway){
+        return new FindGameByIdUseCaseImpl(gameGateway);
     }
 
     @Bean
-    public DeleteUseCase deleteUseCase(GameGateway gateway){
-        return new DeleteUseCaseImpl(gateway);
+    public DeleteGameUseCase deleteUseCase(GameGateway gameGateway){
+        return new DeleteGameUseCaseImpl(gameGateway);
     }
 
     @Bean
-    public FindByNameUseCase findByNameUseCase(GameGateway gateway){
-        return new FindByNameUseCaseImpl(gateway);
+    public FindGameByNameUseCase findByNameUseCase(GameGateway gameGateway){
+        return new FindGameByNameUseCaseImpl(gameGateway);
     }
 
     @Bean
-    public FilterByGenreUseCase filterByGenreUseCase(GameGateway gateway){
-        return new FilterByGenreUseCaseImpl(gateway);
+    public FilterGameByGenreUseCase filterByGenreUseCase(GameGateway gameGateway){
+        return new FilterGameByGenreUseCaseImpl(gameGateway);
     }
 
     @Bean
-    public FilterByStatusUseCase filterByStatusUseCase(GameGateway gateway){
-        return new FilterByStatusUseCaseImpl(gateway);
+    public FilterGameByStatusUseCase filterByStatusUseCase(GameGateway gameGateway){
+        return new FilterGameByStatusUseCaseImpl(gameGateway);
     }
+
+    @Bean
+    public CreateGameSessionUseCase createGameSessionUseCase(GameSessionGateway gameSessionGateway, GameGateway gameGateway){
+        return new CreateGameSessionUseCaseImpl(gameSessionGateway, gameGateway);
+    }
+
+    @Bean
+    public FindAllGameSessionsUseCase findAllGameSessionsUseCase(GameSessionGateway gameSessionGateway){
+        return new FindAllGameSessionsUseCaseImpl(gameSessionGateway);
+    }
+
+    @Bean
+    public FindGameSessionByIdUseCase findGameSessionByIdUseCase(GameSessionGateway gameSessionGateway){
+        return new FindGameSessionByIdUseCaseImpl(gameSessionGateway);
+    }
+
+    @Bean
+    public DeleteGameSessionUseCase deleteGameSessionUseCase(GameSessionGateway gameSessionGateway){
+        return new DeleteGameSessionUseCaseImpl(gameSessionGateway);
+    }
+
+    @Bean
+    public FilterGameSessionsByDateUseCase filterGameSessionsByDateUseCase(GameSessionGateway gameSessionGateway){
+        return new FilterGameSessionsByDateUseCaseImpl(gameSessionGateway);
+    }
+
 }

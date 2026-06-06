@@ -1,6 +1,7 @@
 package com.mooglebook.domain.usecases.gamesession;
 
 import com.mooglebook.domain.entities.GameSession;
+import com.mooglebook.domain.exception.NotFoundGameSessionException;
 import com.mooglebook.domain.gateways.game.GameSessionGateway;
 
 import java.time.LocalDateTime;
@@ -10,11 +11,17 @@ public class FilterGameSessionsByDateUseCaseImpl implements FilterGameSessionsBy
 
     private final GameSessionGateway gateway;
 
-    public FilterGameSessionsByDateUseCaseImpl(GameSessionGateway gateway){
+    public FilterGameSessionsByDateUseCaseImpl(GameSessionGateway gateway) {
         this.gateway = gateway;
     }
+
     @Override
     public List<GameSession> execute(LocalDateTime sessionDate) {
-        return gateway.findGamesBySessionDate(sessionDate);
+        List<GameSession> gamesBySession = gateway.findGamesBySessionDate(sessionDate);
+        if (gamesBySession.isEmpty()) {
+            throw new NotFoundGameSessionException("Not found Game with date");
+        }
+
+        return gamesBySession;
     }
 }
