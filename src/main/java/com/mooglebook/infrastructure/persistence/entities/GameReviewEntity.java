@@ -12,7 +12,7 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @Getter
 @Setter
-public class ReviewEntity {
+public class GameReviewEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

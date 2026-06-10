@@ -36,6 +36,6 @@ public class GameEntity {
         private List<GameSessionEntity> gameSession;
 
         @OneToOne(mappedBy = "game")
-        private ReviewEntity review;
+        private GameReviewEntity review;
 
 }

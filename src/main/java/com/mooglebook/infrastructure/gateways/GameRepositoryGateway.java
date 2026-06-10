@@ -1,4 +1,4 @@
-package com.mooglebook.infrastructure.gateways.game;
+package com.mooglebook.infrastructure.gateways;
 
 import com.mooglebook.domain.entities.Game;
 import com.mooglebook.domain.enums.Genre;

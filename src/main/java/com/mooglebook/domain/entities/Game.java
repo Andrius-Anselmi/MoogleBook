@@ -12,7 +12,7 @@ public record Game(
         Status status,
         String studio,
         List<GameSession> gameSession,
-        Review review
+        GameReview review
 ) {
 
     public static Game create(String name, Genre genre, Status status, String studio){
